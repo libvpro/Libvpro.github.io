@@ -48,12 +48,13 @@
                 <div class="bg-blue-600 p-2 rounded-lg text-white shadow-lg"><i class="fas fa-book-open text-xl"></i></div>
                 <span class="text-2xl font-bold tracking-tight">Lib<span class="text-blue-600">Pro</span></span>
             </div>
-            <div class="hidden md:flex items-center gap-8 font-semibold text-slate-600 text-sm uppercase tracking-wider">
+            <div class="hidden md:flex items-center gap-6 font-semibold text-slate-600 text-sm uppercase tracking-wider">
                 <a href="#features" class="hover:text-blue-600 transition">Features</a>
                 <a href="#testimonials" class="hover:text-blue-600 transition">Reviews</a>
                 <a href="#pricing" class="hover:text-blue-600 transition">Pricing</a>
                 <a href="#faq" class="hover:text-blue-600 transition">FAQ</a>
                 <button onclick="window.openAdmin()" class="text-red-500 font-bold uppercase text-[10px] border border-red-200 px-3 py-1 rounded-full hover:bg-red-50 transition"><i class="fas fa-lock mr-1"></i> Admin</button>
+                <a href="https://libpro.github.io/saas/" class="bg-blue-600 text-white px-5 py-2.5 rounded-xl hover:bg-blue-700 transition shadow-md text-xs tracking-widest font-black">Login / Signup</a>
             </div>
             <button class="text-2xl block md:hidden" onclick="window.toggleMenu()"><i class="fas fa-bars-staggered"></i></button>
         </div>
@@ -83,7 +84,7 @@
                 India's smartest Library ERP for real-time tracking, automated WhatsApp alerts, and professional digital billing.
             </p>
             <div class="mt-10 flex flex-wrap justify-center gap-4">
-                <a href="#pricing" class="bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold shadow-xl hover:bg-blue-700 transition transform hover:scale-105">Get Started Now</a>
+                <a href="https://libpro.github.io/saas/" class="bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold shadow-xl hover:bg-blue-700 transition transform hover:scale-105">Get Started Now</a>
                 <a href="#features" class="bg-white border border-slate-200 text-slate-900 px-8 py-4 rounded-2xl font-bold shadow-sm hover:bg-slate-50 transition">View Features</a>
             </div>
         </div>
@@ -588,7 +589,9 @@
                     const newOrderRef = push(ordersRef);
                     await set(newOrderRef, orderData);
                     alert("Success! Order securely saved to Firebase Database.");
-                    location.reload();
+                    
+                    // User requested Redirect to SaaS Link
+                    window.location.href = "https://libpro.github.io/saas/";
                 } catch (error) {
                     console.error("Firebase Error:", error);
                     alert("Database Save Error: " + error.message + "\n\nPlease check your Firebase Rules (allow read/write).");
